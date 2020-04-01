@@ -1,6 +1,6 @@
 {% macro sls_block(dict) %}
     {% for key, value in dict.items() %}
-    - {{ key }}: {{ value|json() }}
+    - {{ key }}: {{ value|json(object_pairs_hook=collections.OrderedDict) }}
     {% endfor %}
 {% endmacro %}
 
