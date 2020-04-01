@@ -11,4 +11,4 @@ nginx_config:
     - source: salt://nginx/ng/files/nginx.conf
     - template: jinja
     - context:
-        config: {{ nginx.server.config|json(sort_keys=False) }}
+        config: {{ nginx.server.config|json() }}
